@@ -64,7 +64,7 @@ export const AddPost = () => {
   };
 
   const onRemoveImage = () => {
-    setPost((prev) => ({ ...prev, imageURL: null }));
+    setPost((prev) => ({ ...prev, imageUrl: null }));
   };
 
   const onTextChange = React.useCallback((value: string) => {
