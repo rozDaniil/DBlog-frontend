@@ -50,7 +50,9 @@ export const BlogRecentPost: FC<RecentPostProps> = ({
           <div className="mediumCard__userInfo">
             <img
               className="mediumCard__userInfo--avatar"
-              src={userImg ? `http://localhost:8888${userImg}` : avatar}
+              src={
+                userImg ? `${process.env.REACT_APP_API_URL}${userImg}` : avatar
+              }
               alt=""
             />
             <span>

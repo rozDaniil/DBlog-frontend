@@ -66,7 +66,11 @@ export const FullPostComment: FC<FullPostCommentProps> = ({
       author={<Link to={`/user/${userId}`}>{userName}</Link>}
       avatar={
         <Avatar
-          src={userAvatar ? `http://localhost:8888${userAvatar}` : avatar}
+          src={
+            userAvatar
+              ? `${process.env.REACT_APP_API_URL}${userAvatar}`
+              : avatar
+          }
           alt={userName}
         />
       }

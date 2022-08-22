@@ -65,7 +65,7 @@ export const Article: FC<ArticleProps> = ({
               className="article--user-avatar"
               style={{
                 backgroundImage: userAvatar
-                  ? `url(http://localhost:8888${userAvatar})`
+                  ? `url(${process.env.REACT_APP_API_URL}${userAvatar})`
                   : `url(${avatar})`,
               }}
             />

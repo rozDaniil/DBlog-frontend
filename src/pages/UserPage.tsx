@@ -114,7 +114,7 @@ export const UserPage = () => {
           preview={userInfo?.avatarUrl ? true : false}
           src={
             userInfo?.avatarUrl
-              ? `http://localhost:8888${userUpdate.avatarUrl}`
+              ? `${process.env.REACT_APP_API_URL}${userUpdate.avatarUrl}`
               : avatar
           }
         />
