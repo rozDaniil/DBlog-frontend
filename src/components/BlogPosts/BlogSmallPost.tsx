@@ -33,7 +33,7 @@ export const BlogSmallPost: FC<SmallPostProps> = ({
           backgroundImage:
             img === ""
               ? `url(${titlePlaceholder})`
-              : `url(http://localhost:8888${img})`,
+              : `url(${process.env.REACT_APP_API_URL}${img})`,
         }}
         className="smallCard__header"
       />

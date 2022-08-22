@@ -79,7 +79,7 @@ export const FullPost = () => {
               <img
                 width={920}
                 height={430}
-                src={`http://localhost:8888${post?.imageUrl}`}
+                src={`${process.env.REACT_APP_API_URL}${post?.imageUrl}`}
                 alt=""
               />
             )}

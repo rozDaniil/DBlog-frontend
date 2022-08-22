@@ -110,7 +110,7 @@ export const Article: FC<ArticleProps> = ({
             height={150}
             src={
               imageUrl
-                ? `http://localhost:8888${imageUrl}`
+                ? `${process.env.REACT_APP_API_URL}${imageUrl}`
                 : articleTitlePlaceholder
             }
             alt=""

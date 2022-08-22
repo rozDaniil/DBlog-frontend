@@ -205,7 +205,7 @@ export const UserPage = () => {
             height={100}
             src={
               userUpdate.avatarUrl
-                ? `http://localhost:8888${userUpdate.avatarUrl}`
+                ? `${process.env.REACT_APP_API_URL}${userUpdate.avatarUrl}`
                 : avatar
             }
             alt="avatar"

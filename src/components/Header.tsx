@@ -53,7 +53,7 @@ export const Header: FC<HeaderProps> = ({ onOpen }) => {
             width={35}
             height={35}
             style={{ borderRadius: "50%", objectFit: "cover" }}
-            src={`http://localhost:8888${userData.avatarUrl}`}
+            src={`${process.env.REACT_APP_API_URL}${userData.avatarUrl}`}
             alt="avatar"
           />
         );

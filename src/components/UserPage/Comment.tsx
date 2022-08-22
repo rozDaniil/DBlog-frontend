@@ -31,7 +31,9 @@ export const Comment: FC<CommentProps> = ({ text, user, createdAt, post }) => {
           width={20}
           height={20}
           src={
-            user.avatarUrl ? `http://localhost:8888${user.avatarUrl}` : avatar
+            user.avatarUrl
+              ? `${process.env.REACT_APP_API_URL}${user.avatarUrl}`
+              : avatar
           }
           alt=""
         />
