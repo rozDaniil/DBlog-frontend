@@ -1,0 +1,9 @@
+import { getMonth } from "./getMonthName";
+
+export const renderRecentPostDate = (createdAt: string) => {
+  const day = new Date(createdAt).getDate();
+  const month = new Date(createdAt).getMonth();
+  const year = new Date(createdAt).getFullYear();
+
+  return `${day < 10 ? "0" + day : day} ${getMonth(String(month + 1))} ${year}`;
+};

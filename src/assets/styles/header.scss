@@ -1,0 +1,81 @@
+.header {
+  padding: 15px 50px 15px 30px;
+  background-color: $lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $darkgrey;
+  .burgerMenu {
+    font-size: 30px;
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    a {
+      text-decoration: none;
+      color: $black;
+    }
+  }
+  &__searchIcon,
+  &__profileIcon {
+    font-size: 30px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  &__addPost {
+    color: $white;
+    background-color: $black;
+    padding: 5px 15px;
+    border-radius: 4px;
+    opacity: 0.85;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    .userDropDown {
+      font-size: 12px;
+      margin-left: 5px;
+      &:hover {
+        color: #101315;
+      }
+    }
+  }
+}
+
+.searchBlock {
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__input {
+    padding: 0 30px 0 45px !important;
+    border: none;
+    outline: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    width: 300px;
+    color: $black;
+    font-size: 18px;
+    &::placeholder {
+      color: $darkgrey;
+    }
+  }
+  &__searchIcon {
+    font-size: 26px;
+    color: $black !important;
+    position: absolute;
+    left: 10px;
+  }
+  &__closeIcon {
+    font-size: 18px;
+    color: $black !important;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+}

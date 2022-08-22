@@ -1,0 +1,49 @@
+.addPost {
+  padding: 30px;
+  &__title {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 42px;
+    font-weight: 900;
+    font-family: "Oxygen", sans-serif;
+  }
+  &__tags {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Oxygen", sans-serif;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 400px;
+    object-fit: cover;
+  }
+  &__upload {
+    width: 400px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    .remove {
+      padding: 9px 30px;
+      width: 100%;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: $white;
+      background: $black;
+      border-radius: 3px;
+      &:hover {
+        background: lighten($color: $black, $amount: 20%);
+      }
+    }
+    button {
+      width: 200px;
+    }
+  }
+}

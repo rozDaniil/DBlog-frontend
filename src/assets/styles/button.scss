@@ -1,0 +1,70 @@
+.button {
+  outline: none;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-family: "Oxygen", sans-serif;
+}
+.btn-- {
+  &type-1 {
+    padding: 15px 30px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    color: $white;
+    background: $orange;
+    border-radius: 3px;
+    &:hover {
+      color: $orange;
+      background-color: $grey;
+    }
+  }
+  &type-2 {
+    padding: 15px 30px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: $white;
+    background: $black;
+    border-radius: 3px;
+    &:hover {
+      background: lighten($color: $black, $amount: 20%);
+    }
+  }
+  &type-3 {
+    padding: 9px 30px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: $white;
+    background-color: #4858f3;
+    border-radius: 4px;
+    &:hover {
+      background: #2e2ee5;
+    }
+  }
+  &type-4 {
+    color: $white;
+    background-color: $black;
+    padding: 5px 15px;
+    border-radius: 4px;
+    opacity: 0.85;
+    font-size: 24px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    &:hover {
+      background: lighten($color: $black, $amount: 0%);
+    }
+  }
+}

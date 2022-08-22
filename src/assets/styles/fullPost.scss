@@ -1,0 +1,128 @@
+.fullPost {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  padding-left: 40px;
+  padding-top: 80px;
+  &__header {
+    font-family: "Oxygen", sans-serif;
+    font-size: 14px;
+    &-info {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      line-height: 15px;
+      .fullPost__header-tags {
+        cursor: pointer;
+        &:hover {
+          color: #ff5c00;
+        }
+      }
+      span + span {
+        margin-left: 15px;
+        cursor: auto;
+      }
+      .smallCard__postAction {
+        margin-left: 15px;
+        span {
+          font-size: 14px;
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
+    }
+    &-tags {
+      color: $orange;
+    }
+    &-timestamp {
+      color: #999999;
+    }
+  }
+  &__content {
+    width: 70%;
+    max-width: 960px;
+    font-family: "Oxygen", sans-serif;
+
+    h1 {
+      font-size: 55px;
+      font-weight: 600;
+      line-height: 60px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    img {
+      border-radius: 10px;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    p {
+      max-width: 690px;
+      font-size: 18px;
+    }
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    color: #999999;
+    margin-bottom: 100px;
+    &--icon {
+      font-size: 32px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    &--rateCount {
+      font-size: 20px;
+      font-variant-numeric: tabular-nums;
+    }
+    div {
+      display: inline-flex;
+      align-items: center;
+      &:hover {
+        color: darken($color: #999999, $amount: 30%);
+      }
+    }
+    div + div {
+      margin-left: 60px;
+    }
+  }
+  &__commentContainer {
+    width: 70%;
+    max-width: 960px;
+
+    .addPostContainer {
+      position: relative;
+
+      &--control {
+        position: absolute;
+        right: 15px;
+        bottom: 80px;
+        display: flex;
+        align-items: center;
+        z-index: 2;
+        .upload {
+          .ant-upload.ant-upload-select-picture-card {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            border: none;
+            span {
+              font-size: 20px;
+              color: $darkgrey;
+              cursor: pointer;
+              transition: all 0.2s ease-in-out;
+              &:hover {
+                color: $black;
+              }
+            }
+          }
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  &__addComment {
+    border-radius: 5px !important;
+    margin-bottom: 70px !important;
+    box-shadow: inset 0 3px 5px rgba(61, 44, 44, 0.1);
+  }
+}
