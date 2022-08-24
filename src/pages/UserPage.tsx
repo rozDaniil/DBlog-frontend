@@ -25,6 +25,7 @@ export const UserPage = () => {
   const dispatch = useAppDispatch();
   const [userInfo, setUserInfo] = useState<userResponse>({} as userResponse);
   const [userComments, setUserComments] = useState<SingleComment[]>();
+  const [userPosts, setUserPosts] = useState<PostType[]>([] as PostType[]);
   const { commentData } = useAppSelector(({ comment }) => comment);
   const { userData } = useAppSelector(({ user }) => user);
   const { userPostsData, userPostStatus } = useAppSelector(
@@ -100,6 +101,10 @@ export const UserPage = () => {
     );
   }, [commentData, id]);
 
+  useEffect(() => {
+    setUserPosts(userPostsData as PostType[]);
+  }, [userPostsData, id]);
+
   if (!localStorage.getItem("DToken") && !userInfo) {
     return <Navigate to="/" />;
   }
@@ -135,7 +140,7 @@ export const UserPage = () => {
           <Tabs defaultActiveKey="1">
             <TabPane
               tab={getNoun(
-                userPostsData?.length as number,
+                userPosts?.length as number,
                 "Статья",
                 "Статьи",
                 "Статей"
@@ -148,7 +153,7 @@ export const UserPage = () => {
                   style={{ margin: "0 auto", width: "100%" }}
                 />
               ) : (
-                userPostsData?.map((post: PostType) => (
+                userPosts?.map((post: PostType) => (
                   <Article
                     key={post._id}
                     id={post._id}
@@ -166,7 +171,6 @@ export const UserPage = () => {
               )}
             </TabPane>
             <TabPane tab={`${userComments?.length} Комментария`} key="2">
-              {/* {isCommentsLoading ? ( */}
               {userComments?.map((comment) => (
                 <Comment
                   key={comment._id}
