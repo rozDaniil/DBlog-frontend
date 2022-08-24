@@ -156,11 +156,7 @@ export const AddPost = () => {
         options={options}
       />
       <div className="addPost__control">
-        <button
-          style={{ marginRight: "15px" }}
-          onClick={onAddPostHandler}
-          className="button btn--type-4"
-        >
+        <button onClick={onAddPostHandler} className="button btn--type-4">
           {isEditing ? "Сохранить" : "Написать"}
         </button>
         <button onClick={onAddPostHandler} className="button btn--type-4">
