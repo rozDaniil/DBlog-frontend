@@ -100,7 +100,11 @@ export const Header: FC<HeaderProps> = ({ onOpen }) => {
                 <button className="button header__addPost">Написать</button>
               </Link>
             )}
-            {userData && <EditOutlined className="header__searchIcon" />}
+            {userData && (
+              <Link to={"/add-post"}>
+                <EditOutlined className="header__searchIcon" />
+              </Link>
+            )}
           </>
         )}
 
