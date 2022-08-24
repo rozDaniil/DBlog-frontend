@@ -1,6 +1,10 @@
 .content {
   padding: 60px 250px 100px 250px;
   background-color: #f7f7f7;
+  @media (max-width: 1024px) {
+    padding: 60px 0px 100px;
+  }
+
   &--title {
     font-weight: 400;
     font-size: 20px;
@@ -14,6 +18,10 @@
     margin-bottom: 64px;
   }
   .mostViewedContent {
+    @media (max-width: 1024px) {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -30,6 +38,10 @@
   align-items: center;
   justify-content: center;
   column-gap: 20px;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .mostViewedContenttContainer {
@@ -38,6 +50,9 @@
   justify-content: center;
   gap: 25px;
   flex-wrap: wrap;
+  @media (max-width: 1024px) {
+    flex-direction: row;
+  }
 }
 
 .mediumCard {
@@ -49,6 +64,9 @@
   background-repeat: no-repeat;
   padding: 20px 20px 15px 20px;
   transition: all 0.3s ease-in-out;
+  @media (max-width: 425px) {
+    width: 80%;
+  }
   &:hover {
     transform: translateY(-3px);
   }
@@ -149,6 +167,12 @@
   background-color: $white;
   position: relative;
   transition: all 0.3s ease-in-out;
+  @media (max-width: 1024px) {
+    width: 47%;
+  }
+  @media (max-width: 425px) {
+    width: 100%;
+  }
   &:hover {
     transform: translateY(-3px);
     .smallCard__header {
