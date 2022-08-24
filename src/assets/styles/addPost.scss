@@ -1,12 +1,24 @@
 .addPost {
   padding: 30px;
   &__title {
+    width: 100%;
     border: none;
     outline: none;
     padding: 10px;
     font-size: 42px;
     font-weight: 900;
     font-family: "Oxygen", sans-serif;
+    @media (max-width: 425px) {
+      width: 100%;
+      font-size: 32px;
+      font-weight: 800;
+    }
+    @media (max-width: 375px) {
+      font-size: 26px;
+    }
+    @media (max-width: 320px) {
+      font-size: 22px;
+    }
   }
   &__tags {
     border: none;
@@ -28,6 +40,9 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
+    @media (max-width: 425px) {
+      width: 100%;
+    }
     .remove {
       padding: 9px 30px;
       width: 100%;
@@ -44,6 +59,14 @@
     }
     button {
       width: 200px;
+    }
+  }
+  &__control {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    button {
+      width: 48%;
     }
   }
 }

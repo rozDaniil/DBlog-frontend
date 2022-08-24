@@ -155,18 +155,20 @@ export const AddPost = () => {
         onChange={onTextChange}
         options={options}
       />
-      <button
-        style={{ marginRight: "15px" }}
-        onClick={onAddPostHandler}
-        className="button btn--type-4"
-      >
-        {isEditing ? "Сохранить" : "Написать"}
-      </button>
-      <button onClick={onAddPostHandler} className="button btn--type-4">
-        <Link style={{ color: "white" }} to={"/"}>
-          Отмена
-        </Link>
-      </button>
+      <div className="addPost__control">
+        <button
+          style={{ marginRight: "15px" }}
+          onClick={onAddPostHandler}
+          className="button btn--type-4"
+        >
+          {isEditing ? "Сохранить" : "Написать"}
+        </button>
+        <button onClick={onAddPostHandler} className="button btn--type-4">
+          <Link style={{ color: "white" }} to={"/"}>
+            Отмена
+          </Link>
+        </button>
+      </div>
     </div>
   );
 };
