@@ -79,7 +79,6 @@ export const FullPost = () => {
             <h1>{post?.title}</h1>
             {post?.imageUrl && (
               <img
-                width={920}
                 height={430}
                 src={`${process.env.REACT_APP_API_URL}${post?.imageUrl}`}
                 alt=""

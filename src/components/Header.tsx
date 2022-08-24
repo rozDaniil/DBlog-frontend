@@ -102,7 +102,7 @@ export const Header: FC<HeaderProps> = ({ onOpen }) => {
             )}
             {userData && (
               <Link to={"/add-post"}>
-                <EditOutlined className="header__searchIcon" />
+                <EditOutlined className="header__writePost" />
               </Link>
             )}
           </>
