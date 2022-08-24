@@ -24,11 +24,18 @@
     }
   }
   &__searchIcon,
-  &__profileIcon {
+  &__profileIcon,
+  &__writePost {
     font-size: 30px;
     cursor: pointer;
     &:hover {
       opacity: 0.85;
+    }
+  }
+  &__writePost {
+    display: none !important;
+    @media (max-width: 320px) {
+      display: block !important;
     }
   }
   &__addPost {
@@ -37,6 +44,9 @@
     padding: 5px 15px;
     border-radius: 4px;
     opacity: 0.85;
+    @media (max-width: 320px) {
+      display: none !important;
+    }
     &:hover {
       opacity: 1;
     }
@@ -71,7 +81,10 @@
       padding: 0 27px 0 0 !important;
       width: 130px;
     }
-
+    @media (max-width: 320px) {
+      padding: 0 27px 0 0 !important;
+      width: 160px;
+    }
     &::placeholder {
       color: $darkgrey;
     }

@@ -43,7 +43,6 @@ function App() {
         <>
           <Drawer
             title="Basic Drawer"
-            closable={false}
             onClose={() => setIsOpen(false)}
             visible={isOpen}
             placement={placement}

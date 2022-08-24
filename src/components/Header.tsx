@@ -4,6 +4,7 @@ import {
   MenuOutlined,
   CloseOutlined,
   UpCircleOutlined,
+  EditOutlined,
 } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
 import { useIntersection } from "react-use";
@@ -99,6 +100,7 @@ export const Header: FC<HeaderProps> = ({ onOpen }) => {
                 <button className="button header__addPost">Написать</button>
               </Link>
             )}
+            {userData && <EditOutlined className="header__searchIcon" />}
           </>
         )}
 
