@@ -9,6 +9,7 @@
     &-info {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       font-size: 13px;
       line-height: 15px;
       .fullPost__header-tags {
@@ -32,7 +33,12 @@
       }
     }
     &-tags {
-      color: $orange;
+      width: 100%;
+      flex-grow: 1;
+      flex: 1;
+      span {
+        color: $orange;
+      }
     }
     &-timestamp {
       color: #999999;

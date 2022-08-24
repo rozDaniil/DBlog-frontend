@@ -58,11 +58,12 @@ export const FullPost = () => {
       ) : (
         <>
           <div className="fullPost__header-info">
-            {post?.tags.map((tag, index) => (
-              <span className="fullPost__header-tags" key={tag + index}>
-                {tag}
-              </span>
-            ))}
+            <div className="fullPost__header-tags">
+              {post?.tags.map((tag, index) => (
+                <span key={tag + index}>{tag}</span>
+              ))}
+            </div>
+
             <span className="fullPost__header-timestamp">{renderDate()}</span>
             <div className="smallCard__postAction">
               <div className="view">
