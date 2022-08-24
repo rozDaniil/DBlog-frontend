@@ -23,6 +23,8 @@ const { TabPane } = Tabs;
 
 export const FullPost = () => {
   const { commentData } = useAppSelector(({ comment }) => comment);
+  const { userData } = useAppSelector(({ user }) => user);
+
   const [comments, setComments] = useState<SingleComment[]>([]);
   const [post, setPost] = useState<PostType>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -100,7 +102,7 @@ export const FullPost = () => {
         </div>
       )}
       <div className="fullPost__commentContainer">
-        {!isLoading && <AddPostComment />}
+        {userData ? !isLoading && <AddPostComment /> : null}
         <Tabs defaultActiveKey="1" onChange={onChange}>
           <TabPane tab="По дате" key="1">
             {isLoading ? (

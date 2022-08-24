@@ -31,7 +31,6 @@ export const UserPage = () => {
     ({ posts }) => posts
   );
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isCommentsLoading, setIsCommentsLoading] = useState(false);
   const [userUpdate, setUserUpdate] = useState({
     fullName: userInfo?.fullName,
     avatarUrl: userInfo?.avatarUrl,
@@ -51,6 +50,11 @@ export const UserPage = () => {
     setIsModalVisible(false);
     updateModalInfo();
   };
+
+  const viewsCount = userPostsData?.reduce(
+    (acc, post) => (acc += post.viewsCount),
+    0
+  );
 
   const updateModalInfo = () =>
     setUserUpdate((prev) => ({
@@ -77,8 +81,6 @@ export const UserPage = () => {
   };
 
   const isLoading = userPostStatus === null ? true : false;
-  const commentsLoadingToggler = (value: boolean) =>
-    setIsCommentsLoading(value);
 
   useEffect(() => {
     dispatch(fetcUserPosts(id as string));
@@ -97,8 +99,6 @@ export const UserPage = () => {
       commentData.filter((comment) => (comment.user as userResponse)._id === id)
     );
   }, [commentData, id]);
-
-  console.log(isCommentsLoading);
 
   if (!localStorage.getItem("DToken") && !userInfo) {
     return <Navigate to="/" />;
@@ -127,7 +127,7 @@ export const UserPage = () => {
           </span>
           <span className="userPage__header--userView">
             <span>Просмотров: </span>
-            22 222
+            {viewsCount}
           </span>
           <span className="userPage__header--register">
             На проекте с 17 {getMonth(userInfo?.createdAt as string)} 2022
