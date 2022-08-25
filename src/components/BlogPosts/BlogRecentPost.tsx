@@ -30,7 +30,11 @@ export const BlogRecentPost: FC<RecentPostProps> = ({
 }) => {
   return (
     <div
-      style={{ backgroundImage: img ? img : `url(${titlePlaceholder})` }}
+      style={{
+        backgroundImage: img
+          ? `url(${process.env.REACT_APP_API_URL}${img})`
+          : `url(${titlePlaceholder})`,
+      }}
       className="mediumCard"
     >
       <div className="mediumCard--tagContainer">
