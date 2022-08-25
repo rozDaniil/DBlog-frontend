@@ -34,6 +34,9 @@
     background-color: $white;
     width: 960px;
     margin: 0 auto;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     .ant-image {
       position: absolute;
       top: -80px;
@@ -87,10 +90,17 @@
       display: flex;
       align-content: inherit;
       justify-content: space-between;
+      @media (max-width: 510px) {
+        flex-wrap: wrap;
+      }
     }
     &--left {
       display: flex;
       flex-direction: column;
+      @media (max-width: 510px) {
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
       .article--user {
         display: flex;
         align-items: center;
@@ -152,6 +162,10 @@
       }
     }
     &--right {
+      @media (max-width: 510px) {
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
       img {
         border-radius: 8px;
       }
