@@ -81,7 +81,8 @@ export const AddPost = () => {
     isEditing
       ? dispatch(fetchUpdatePosts({ id, payload: post }))
       : dispatch(fetchAddPosts(post));
-    navigate("/");
+    return <Navigate to={"/"} />;
+    // navigate("/");
   };
 
   useEffect(() => {
