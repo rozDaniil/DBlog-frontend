@@ -28,6 +28,7 @@ interface ArticleProps {
   imageUrl: string;
   userId: string;
   userData: userResponse | null;
+  commentsCount: number;
 }
 
 export const Article: FC<ArticleProps> = ({
@@ -41,6 +42,7 @@ export const Article: FC<ArticleProps> = ({
   imageUrl,
   userId,
   userData,
+  commentsCount,
 }) => {
   const dispatch = useAppDispatch();
 
@@ -91,7 +93,7 @@ export const Article: FC<ArticleProps> = ({
             </div>
             <div className="comment">
               <CommentOutlined className="commentIcon" />
-              <span className="count">2</span>
+              <span className="count">{commentsCount}</span>
             </div>
             {userId === userData?._id && (
               <Popover

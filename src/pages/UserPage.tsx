@@ -166,6 +166,10 @@ export const UserPage = () => {
                     imageUrl={post.imageUrl as string}
                     viewsCount={post.viewsCount}
                     userData={userData}
+                    commentsCount={
+                      commentData.filter((comment) => comment.post === post._id)
+                        .length
+                    }
                   />
                 ))
               )}
